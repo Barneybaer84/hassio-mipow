@@ -1,7 +1,7 @@
 from homeassistant.components.number import NumberEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
-from homeassistant.const import TIME_MINUTES
+from homeassistant.const import UnitOfTime
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.components.number import RestoreNumber
@@ -134,7 +134,7 @@ class MiPowTimeOffEntity(MiPowNumber):
             native_step=1,
             native_min_value=0,
             native_max_value=24 * 60 - 1,
-            native_unit_of_measurement=TIME_MINUTES,
+            native_unit_of_measurement=UnitOfTime.MINUTES,
         )
         self._attr_native_value = 0
 
