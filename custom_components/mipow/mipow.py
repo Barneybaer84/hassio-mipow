@@ -50,7 +50,7 @@ class MiPowDeviceInfo:
 
 
 class MiPow:
-    def __init__(self, device: BLEDevice) -> None:
+    def __init__(self, device: BLEDevice, initial_rssi: int | None = None) -> None:
         self._state: State = State()
         self._device: BLEDevice = device
         self._services: BleakGATTServiceCollection | None = None
@@ -73,6 +73,7 @@ class MiPow:
         self._timer_set: bool | None = None
         self._reconnect: bool = False
         self._update_counter: int = 0
+        self._rssi: int | None = initial_rssi  # Speichern des initialen RSSI-Werts
 
     @property
     def address(self) -> str:
@@ -84,7 +85,7 @@ class MiPow:
 
     @property
     def rssi(self) -> str:
-        return self._device.rssi
+        return str(self._rssi) if self._rssi is not None else "N/A"
 
     @property
     def is_on(self) -> bool:
