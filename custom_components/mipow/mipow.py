@@ -73,7 +73,7 @@ class MiPow:
         self._timer_set: bool | None = None
         self._reconnect: bool = False
         self._update_counter: int = 0
-        self._rssi: int | None = initial_rssi  # Speichern des initialen RSSI-Werts
+        self._rssi: int | None = initial_rssi
 
     @property
     def address(self) -> str:

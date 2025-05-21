@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.backports.enum import StrEnum
+from enum import StrEnum
 from homeassistant.components.light import EFFECT_COLORLOOP
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers.entity import DeviceInfo
